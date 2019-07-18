@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpHeaderResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { headersToString } from 'selenium-webdriver/http';
+import { CurrentUser } from '../classes/CurrentUser';
 
 
 const httpOptions = {
@@ -19,15 +20,26 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LoginService {
+  //if all values null then the user is not logged in
+  currentUser: CurrentUser = new CurrentUser(null, null, null);
+
+  users:Observable<CurrentUser[]>;
 
   constructor(private http: HttpClient) { }
 
-  getData(username:string){
+  getData(username:string): Observable<CurrentUser[]>{
     let address:string = "http://localhost:8080/user/" + username;
-    
-    return this.http.get(address, httpOptions)
-      .subscribe(data => {
-        console.log("we got ", data)
-      });
+    //this.users = this.http.get<CurrentUser[]>(address, httpOptions);//set to array? 
+    //console.log(this.users);
+    return this.http.get<CurrentUser[]>(address, httpOptions);
+      // .toPromise()
+      // .then(response => );
+      //  .subscribe(data => {
+      //    console.log("we got ", data)
+      //  });
   }
+
+  
+
+
 }
