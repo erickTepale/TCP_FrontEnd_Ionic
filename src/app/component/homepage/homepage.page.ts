@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service';
+
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepagePage implements OnInit {
 
-  constructor() { }
+  constructor(private loginservice : LoginService) { 
+    
+  }
 
   ngOnInit() {
+    console.log("inside homepage: -- " + this.loginservice.currentUser.username);
   }
 
 }
