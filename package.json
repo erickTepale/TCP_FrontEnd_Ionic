@@ -4,7 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "engines": {
-    "node": "10.16.0"
+    "node": "10.16.0",
+    "npm": "6.10.1"
+
   },
   "scripts": {
     "ng": "ng",
