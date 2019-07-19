@@ -29,14 +29,7 @@ export class LoginService {
 
   getData(username:string): Observable<CurrentUser[]>{
     let address:string = "http://localhost:8080/user/" + username;
-    //this.users = this.http.get<CurrentUser[]>(address, httpOptions);//set to array? 
-    //console.log(this.users);
     return this.http.get<CurrentUser[]>(address, httpOptions);
-      // .toPromise()
-      // .then(response => );
-      //  .subscribe(data => {
-      //    console.log("we got ", data)
-      //  });
   }
 
   
