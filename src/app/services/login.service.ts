@@ -28,7 +28,8 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   getData(username:string): Observable<CurrentUser[]>{
-    let address:string = "http://localhost:8080/user/" + username;
+    //let address:string = "http://localhost:8080/user/" + username; //localhost
+    let address:string = "https://belle-maison-41978.herokuapp.com/user/" + username; //heroku
     return this.http.get<CurrentUser[]>(address, httpOptions);
   }
 
