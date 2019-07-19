@@ -1,5 +1,7 @@
 export class Message {
+    // tslint:disable-next-line: variable-name
+    message_id: number;
     userId: number;
-    messageId: string;
     message: string;
+    time: string;
 }

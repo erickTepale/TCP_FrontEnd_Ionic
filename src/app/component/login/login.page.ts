@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
         //this.actualUser = new CurrentUser(this.currentUsers[i].user_id, this.currentUsers[i].username, null);
         this.loginService.currentUser.user_id = this.currentUsers[i].user_id;
         this.loginService.currentUser.username = this.currentUsers[i].username;
-        this.router.navigate(['homepage']);
+        this.router.navigate(['chatpage']);
       }
     }
 
