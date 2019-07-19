@@ -7,7 +7,7 @@
 <ion-content>
   <ion-card *ngFor="let message of messages">
     <ion-card-header>
-      <ion-card-subtitle>{{message.userId}}</ion-card-subtitle>
+      <ion-card-subtitle *ngIf='allUser'>{{allUser[message.userId-1].username}}</ion-card-subtitle>
       <ion-card-title>{{message.message}}</ion-card-title>
     </ion-card-header>
   
