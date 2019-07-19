@@ -20,8 +20,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    MenuPageModule
+    RouterModule.forChild(routes)
+    // MenuPageModule
   ],
   declarations: [ChatpagePage]
 })

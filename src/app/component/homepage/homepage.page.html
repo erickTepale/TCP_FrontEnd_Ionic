@@ -1,11 +1,34 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>homepage</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  
-    <app-menu></app-menu>
+  <ion-card slot="end">
+    <ion-card-header>
+      <ion-card-subtitle>Welcome to our News App</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Enjoy the latest news from TechCrunch. 
+      </p>
+      <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
+
+
+<!-- <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Homepage</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <app-menu></app-menu>
+
+
+<ion-content>
+
+<p>jwduhwbeofwoe</p>
+
+</ion-content> -->
