@@ -27,16 +27,7 @@ export class ChatpagePage implements OnInit {
   getDMdata() {
     this.directMessageService.getData(this.loginService.currentUser.user_id, this.fromId).subscribe(
       data => {
-        console.log(data);
         this.messages = data;
-        this.directMessageService.getData(this.fromId, this.loginService.currentUser.user_id).subscribe(
-          d => {
-            console.log(d);
-            this.messages = this.messages.concat(d);
-            this.messages.sort((a, b) => a.time < b.time ? -1 : 1 );
-            console.log(this.messages);
-          }
-        );
       }
     );
 
@@ -49,5 +40,13 @@ export class ChatpagePage implements OnInit {
         this.allUser = data;
       }
     );
+  }
+
+  onKeyDown(event: any) {
+    if (event.key === 'Enter') {
+      this.directMessageService.postMessage(
+        this.loginService.currentUser.user_id, this.fromId, event.target.value);
+      event.target.value = '';
+    }
   }
 }
