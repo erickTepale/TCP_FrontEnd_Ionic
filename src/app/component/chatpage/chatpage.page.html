@@ -1,8 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>chatpage</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-split-pane when="md">
+  <ion-menu contentId="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Channels</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
 <ion-content>
   <ion-card *ngFor="let message of messages">
@@ -19,4 +21,3 @@
   Message
   <ion-input type = "text" (keydown)="onKeyDown($event)"></ion-input>
 
-</ion-content>
